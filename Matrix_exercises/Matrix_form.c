@@ -43,7 +43,11 @@ int main(){
     for(i=0;i<n;i++){//LLenamos la matriz para formar la Y
         for(j=0;j<n;j++){
             if(((i == j || i + j == n - 1) && i <= n / 2) || (j == n / 2 && i > n / 2) ){
-                matrix[i][j] = 1;
+                // i==j llena la diagonal principal e i+j==n-1 llena la diagonal secundaria.
+    // Todo agrupado para que el && i<=n/2 haga que ambas se corten en la mitad de la matriz.
+    // j==n/2 && i>n/2 fija la columna en la mitad, y el i>n/2 hace que se pinte 
+    // únicamente desde el medio hacia abajo.
+                matrix[i][j] = 1; 
             }else{
                 matrix[i][j] = 0;
             }
